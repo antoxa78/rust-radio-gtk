@@ -1,5 +1,5 @@
 [package]
-name = "rust-radio-gtk"
+name = "rust-radio"
 version = "0.1.8"
 edition = "2021"
 description = "A GTK4 internet radio player using radio-browser.info"
@@ -8,9 +8,9 @@ repository = "https://github.com/antoxa78/rust-radio-gtk"
 homepage = "https://github.com/antoxa78/rust-radio-gtk"
 
 [package.metadata.deb]
-name = "rust-radio-gtk"
+name = "rust-radio"
 maintainer = "Antoxa <anton.b1978@gmail.com>"
-copyright = "2026 Rust Radio"
+copyright = "2026 Antoxa"
 license-file = ["LICENSE", "64"]
 extended-description = """A GTK4-based internet radio player that browses and plays stations from the radio-browser.info database.
 Features include browsing by tag, language, country, favorites, recently played, and playlist import."""
@@ -18,11 +18,11 @@ section = "sound"
 priority = "optional"
 maintainer-scripts = "debian/"
 assets = [
-    ["target/release/rust-radio-gtk", "usr/bin/", "755"],
-    ["rust-radio-gtk.desktop", "usr/share/applications/", "644"],
-    ["assets/icon-48.png", "usr/share/icons/hicolor/48x48/apps/rust-radio-gtk.png", "644"],
-    ["assets/icon-256.png", "usr/share/icons/hicolor/256x256/apps/rust-radio-gtk.png", "644"],
-    ["assets/icon-512.png", "usr/share/icons/hicolor/512x512/apps/rust-radio-gtk.png", "644"],
+    ["target/release/rust-radio", "usr/bin/", "755"],
+    ["rust-radio.desktop", "usr/share/applications/", "644"],
+    ["assets/icon-48.png", "usr/share/icons/hicolor/48x48/apps/rust-radio.png", "644"],
+    ["assets/icon-256.png", "usr/share/icons/hicolor/256x256/apps/rust-radio.png", "644"],
+    ["assets/icon-512.png", "usr/share/icons/hicolor/512x512/apps/rust-radio.png", "644"],
 ]
 depends = "$auto"
 

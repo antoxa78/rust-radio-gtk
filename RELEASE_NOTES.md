@@ -2,6 +2,10 @@
 
 ## v0.1.8
 
+### Project Renamed
+- **rust-radio-gtk** → **Rust Radio** (binary renamed to `rust-radio`)
+- Desktop file, icons, and .deb package name updated accordingly
+
 ### Performance
 - **Batch-rendered station lists**: Stations are rendered in small batches (5 per cycle) via idle callbacks, keeping the UI responsive even with 250 stations
 - **Deferred Station cloning**: Station data is cloned only when the user toggles a favorite, not during list rendering

@@ -1,4 +1,4 @@
-# Rust Radio GTK4
+# Rust Radio
 
 A GTK4 internet radio player that browses and plays stations from the [radio-browser.info](https://www.radio-browser.info) database.
 
@@ -40,14 +40,14 @@ cargo build --release
 
 ```bash
 cargo deb
-sudo dpkg -i target/debian/rust-radio-gtk_0.1.8-1_amd64.deb
+sudo dpkg -i target/debian/rust-radio_0.1.8-1_amd64.deb
 ```
 
 ### Manual
 
 ```bash
 cargo build --release
-sudo cp target/release/rust-radio-gtk /usr/local/bin/
+sudo cp target/release/rust-radio /usr/local/bin/
 ```
 
 ## License

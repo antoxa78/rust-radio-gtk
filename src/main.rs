@@ -539,9 +539,9 @@ fn fetch_data_async(
             let client = reqwest::Client::new();
             if is_stations {
                 let (stations_fut, stats_fut) = tokio::join!(
-                    client.get(&url).header("User-Agent", "RustRadioGTK/1.0").send(),
+                    client.get(&url).header("User-Agent", "RustRadio/1.0").send(),
                     client.get("https://de1.api.radio-browser.info/json/stats")
-                        .header("User-Agent", "RustRadioGTK/1.0")
+                        .header("User-Agent", "RustRadio/1.0")
                         .send(),
                 );
                 if let Ok(response) = stations_fut {
@@ -561,7 +561,7 @@ fn fetch_data_async(
                     }
                 }
             } else {
-                if let Ok(response) = client.get(&url).header("User-Agent", "RustRadioGTK/1.0").send().await {
+                if let Ok(response) = client.get(&url).header("User-Agent", "RustRadio/1.0").send().await {
                     if let Ok(cats) = response.json::<Vec<BrowseItem>>().await {
                         let filtered = cats.into_iter().filter(|c| !c.name.trim().is_empty()).take(100).collect();
                         let _ = tx.send_blocking(IncomingData::Categories(target_view, filtered));
@@ -1434,7 +1434,7 @@ fn build_ui(app: &Application) {
 
         let about_group = PreferencesGroup::builder().title("About").build();
         let about_row = ActionRow::builder()
-            .title(format!("Rust Radio GTK v{}", env!("CARGO_PKG_VERSION")))
+            .title(format!("Rust Radio v{}", env!("CARGO_PKG_VERSION")))
             .subtitle(option_env!("BUILD_DATETIME").unwrap_or("unknown"))
             .activatable(true)
             .build();
@@ -1454,7 +1454,7 @@ fn build_ui(app: &Application) {
                 .margin_top(24).margin_bottom(24).margin_start(24).margin_end(24)
                 .build();
             let app_label = Label::builder()
-                .label(&format!("Rust Radio GTK v{}", env!("CARGO_PKG_VERSION")))
+                .label(&format!("Rust Radio v{}", env!("CARGO_PKG_VERSION")))
                 .css_classes(vec!["title-1".to_string()])
                 .halign(gtk::Align::Center)
                 .build();
@@ -2851,7 +2851,7 @@ fn build_ui(app: &Application) {
     });
 
     let window = ApplicationWindow::builder()
-        .application(app).title("Rust Radio GTK")
+        .application(app).title("Rust Radio")
         .default_width(1280).default_height(800)
         .resizable(true)
         .content(&content_box)
