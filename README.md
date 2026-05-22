@@ -2,6 +2,8 @@
 
 A GTK4 internet radio player that browses and plays stations from the [radio-browser.info](https://www.radio-browser.info) database.
 
+Built with [Rust](https://www.rust-lang.org/) · [GTK4](https://gtk.org/) · [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/) · [GStreamer](https://gstreamer.freedesktop.org/)
+
 ## Features
 
 - Browse stations by **tag**, **language**, or **country**

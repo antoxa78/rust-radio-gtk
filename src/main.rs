@@ -1481,7 +1481,7 @@ fn build_ui(app: &Application) {
                 .halign(gtk::Align::Center)
                 .build();
             let website_link = Label::builder()
-                .label("<a href=\"https://github.com/antoxa78/rust-radio-gtk\">github.com/antoxa78/rust-radio-gtk</a>")
+                .label("<a href=\"https://github.com/antoxa78/Rust-Radio\">github.com/antoxa78/Rust-Radio</a>")
                 .use_markup(true)
                 .css_classes(vec!["caption".to_string()])
                 .halign(gtk::Align::Center)
